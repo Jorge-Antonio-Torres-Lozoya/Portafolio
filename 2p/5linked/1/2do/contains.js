@@ -81,17 +81,18 @@ class LinkedList {
 
 
   contains(data) {
-    if (this.head === null) {
-      return null
-    }
 
     let current = this.head
-    while (current.data != data) {
-      return false
+    while (current.data !== data) {
+      current = current.next
     }
-    return true
-
+    if (current.data == data) {
+      return true
+    }
   }
+
+
+
 }
 
 let linkedList = new LinkedList()
@@ -101,6 +102,6 @@ linkedList.add('Esmeralda')
 linkedList.add('Verde')
 linkedList.add('Amarillo')
 linkedList.print()
-console.log(linkedList.contains('Azul'))
+console.log(linkedList.contains('Verde'))
 
 
