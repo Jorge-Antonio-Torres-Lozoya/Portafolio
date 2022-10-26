@@ -1,15 +1,3 @@
-/* PROBLEM 1
- * contains(v)
- *
- * look up for value v in the linked list
- * @arg {type} v - value; may be of a char, number, or object
- * @returns {bool} - true or false, if value v exists or not,
- * may use traverse
- *
- * @example
- * contains(3)
- *
-*/
 class Node {
   constructor(data) {
     this.data = data;
@@ -81,27 +69,23 @@ class LinkedList {
 
 
   contains(data) {
-
     let current = this.head
-    while (current.data !== data) {
+    while (current) {
+      if (current.data == data) {
+        return true
+      }
       current = current.next
     }
-    if (current.data == data) {
-      return true
-    }
+   return false
   }
-
-
 
 }
 
 let linkedList = new LinkedList()
-
 linkedList.add('Azul')
 linkedList.add('Esmeralda')
 linkedList.add('Verde')
 linkedList.add('Amarillo')
 linkedList.print()
-console.log(linkedList.contains('Verde'))
-
+console.log(linkedList.contains('Amarillo'))
 
