@@ -1,5 +1,4 @@
-
-class Node {
+    class Node {
     constructor(data) {
       this.data = data;
       this.left = null;
@@ -7,7 +6,7 @@ class Node {
     }
   }
   
-  class BinarySearchTree {
+  class BinaryTree {
     constructor() {
       this.root = null;
     }
@@ -87,19 +86,15 @@ class Node {
       return this.root;
     }
   
-    // search
-    search(node, data) {
-      if (node === null) {
-        return null;
-      } else if (data < node.data) {
-        return this.search(node.left, data);
-      } else if (data > node.data) {
-        return this.search(node.rigth, data);
-      } else {
-        return node;
+    // pre orden
+    preorder(node=this.root) {
+      if (node !== null) {
+        console.log(node.data);
+        this.preorder(node.left);
+        this.preorder(node.rigth);
       }
     }
-   
+ 
   
     // in orden
     inorder(node=this.root) {
@@ -119,20 +114,5 @@ class Node {
       }
     }
   }
-  let tree = new BinarySearchTree()
-  tree.insert(4)
-  tree.insert(2)
-  tree.insert(6)
-  tree.insert(3)
-  tree.insert(1)
-  tree.insert(-1)
-  tree.insert(3)
-  tree.insert(1)
-  console.log('PreOrden');
-  tree.preorder()
-  console.log();
-  console.log('InOrder');
-  tree.inorder()
-  console.log();
-  console.log('PostOrden');
-  tree.postorder()
+
+export {BinaryTree}

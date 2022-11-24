@@ -99,7 +99,15 @@ class Node {
         return node;
       }
     }
-   
+    // pre orden
+    preorder(node=this.root) {
+      if (node !== null) {
+        console.log(node.data);
+        this.preorder(node.left);
+        this.preorder(node.rigth);
+      }
+    }
+ 
   
     // in orden
     inorder(node=this.root) {
@@ -119,20 +127,4 @@ class Node {
       }
     }
   }
-  let tree = new BinarySearchTree()
-  tree.insert(4)
-  tree.insert(2)
-  tree.insert(6)
-  tree.insert(3)
-  tree.insert(1)
-  tree.insert(-1)
-  tree.insert(3)
-  tree.insert(1)
-  console.log('PreOrden');
-  tree.preorder()
-  console.log();
-  console.log('InOrder');
-  tree.inorder()
-  console.log();
-  console.log('PostOrden');
-  tree.postorder()
+export {BinarySearchTree}
