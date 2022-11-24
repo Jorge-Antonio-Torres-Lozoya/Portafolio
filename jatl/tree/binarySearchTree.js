@@ -1,3 +1,9 @@
+//INTEGRANTES
+//Aranda Peregrina Nereo Uriel
+//Castrejón Mejía Evelyn Fernanda
+//Cervantes Ramírez José Luis
+//Torres Lozoya Jorge Antonio
+//Verdín Aguilar Mónica Gabriela
 
 class Node {
     constructor(data) {
